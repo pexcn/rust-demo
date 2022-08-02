@@ -1,0 +1,48 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable",
+            // "env": {
+            //     "RUST_BACKTRACE": "full"
+            // },
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=rust-demo",
+                    "--package=rust-demo"
+                ],
+                "filter": {
+                    "name": "rust-demo",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests",
+            // "env": {
+            //     "RUST_BACKTRACE": "full"
+            // },
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=rust-demo",
+                    "--package=rust-demo"
+                ],
+                "filter": {
+                    "name": "rust-demo",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
